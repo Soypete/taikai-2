@@ -21,3 +21,83 @@ message Hello {
   // @gotags: fake:"{beername}"
   optional string person_name = 5 [json_name = "person_name"];
 }
+
+message Org {
+	option (gorm.opts) = {ormable: true};
+  // @gotags: fake:"skip"
+	string name = 1 [json_name = "name"];
+  // @gotags: fake:"skip"
+	string id = 2 [json_name = "id"];
+  // @gotags: fake:"skip"
+	string description = 3 [json_name = "description"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp created_at = 4 [json_name = "created_at"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp updated_at = 5 [json_name = "updated_at"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp deleted_at = 6 [json_name = "deleted_at"];
+}
+
+message User {
+	option (gorm.opts) = {ormable: true};
+  // @gotags: fake:"skip"
+	string name = 1 [json_name = "name"];
+  // @gotags: fake:"skip"
+	string id = 2 [json_name = "id"];
+  // @gotags: fake:"skip"
+	string email = 3 [json_name = "email"];
+  // @gotags: fake:"skip"
+	repeated string group_ids = 4 [json_name = "group_ids"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp created_at = 5 [json_name = "created_at"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp updated_at = 6 [json_name = "updated_at"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp deleted_at = 7 [json_name = "deleted_at"];
+} 
+
+message Group {
+	option (gorm.opts) = {ormable: true};
+  // @gotags: fake:"skip"
+	string name = 1 [json_name = "name"];
+  // @gotags: fake:"skip"
+	string id = 2 [json_name = "id"];
+  // @gotags: fake:"skip"
+	string org_id = 3 [json_name = "org_id"];
+  // @gotags: fake:"skip"
+	repeated string owner_ids = 4 [json_name = "owner_ids"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp created_at = 5 [json_name = "created_at"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp updated_at = 6 [json_name = "updated_at"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp deleted_at = 7 [json_name = "deleted_at"];
+}
+
+message Event {
+	option (gorm.opts) = {ormable: true};
+  // @gotags: fake:"skip"
+	string name = 1 [json_name = "name"];
+  // @gotags: fake:"skip"
+	string id = 2 [json_name = "id"];
+  // @gotags: fake:"skip"
+	string group_id = 3 [json_name = "group_id"];
+  // @gotags: fake:"skip"
+	string title = 4 [json_name = "title"]; 
+  // @gotags: fake:"skip"
+	string location = 5 [json_name = "location"];
+  // @gotags: fake:"skip"
+	string description = 6 [json_name = "description"];
+  // @gotags: fake:"skip"
+	repeated User user_ids = 7 [json_name = "user_ids"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp start_time = 8 [json_name = "start_time"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp end_time = 9 [json_name = "end_time"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp created_at = 10 [json_name = "created_at"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp updated_at = 11 [json_name = "updated_at"];
+  // @gotags: fake:"skip"
+	google.protobuf.Timestamp deleted_at = 12 [json_name = "deleted_at"];
+}

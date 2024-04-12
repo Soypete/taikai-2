@@ -18,7 +18,7 @@ install_proto_tools() {
   go install github.com/catalystsquad/protoc-gen-go-gorm@latest
 	go install github.com/favadi/protoc-go-inject-tag@latest
 	go install github.com/mitchellh/protoc-gen-go-json@latest
-	npm install @bufbuild/protobuf @bufbuild/protoc-gen-es @bufbuild/buf @openapitools/openapi-generator-cli
+	npm install @bufbuild/protobuf @bufbuild/protoc-gen-es @bufbuild/buf 
 }
 
 build_protos() {
@@ -26,8 +26,6 @@ build_protos() {
   echo "Building proto generated things"
   PATH="$PATH:$(pwd)/node_modules/.bin"
 	cd protos; buf generate;protoc-go-inject-tag -input "gen/go/taikai/v1/*.*.*.go";protoc-go-inject-tag -input "gen/go/taikai/v1/*.*.go";go mod tidy; cd -
-	#mkdir -p protos/clients/js; cd protos/clients/js; openapi-generator-cli generate -g javascript -i ../../gen/docs/taikai/v1/api.swagger.json -c config.yaml; npm install; npm run build; cd -
-	mkdir -p protos/clients/ts; cd protos/clients/ts; openapi-generator-cli generate -g typescript-fetch -i ../../gen/docs/taikai/v1/api.swagger.json -c config.yaml; npm install; npm run build; cd -
 }
 
 run() {
