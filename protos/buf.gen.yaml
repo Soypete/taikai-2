@@ -2,7 +2,7 @@ version: v1
 managed:
   enabled: true
   go_package_prefix:
-    default: github.com/forgeutah/meetup-replacement-project/protos/gen/go
+    default: github.com/forgeutah/taikai/protos/gen/go
     except:
       - buf.build/googleapis/googleapis
 plugins:

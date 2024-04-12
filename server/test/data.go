@@ -4,14 +4,14 @@ import (
 	"testing"
 
 	"github.com/brianvoe/gofakeit/v6"
-	meetupreplacementprojectv1 "github.com/forgeutah/meetup-replacement-project/protos/gen/go/meetupreplacementproject/v1"
+	taikaiv1 "github.com/forgeutah/taikai/protos/gen/go/taikai/v1"
 	"github.com/emirpasic/gods/sets/hashset"
 	"github.com/samber/lo"
 	"github.com/stretchr/testify/require"
 )
 
 type TestData struct {
-	Hellos   []*meetupreplacementprojectv1.Hello
+	Hellos   []*taikaiv1.Hello
 	HelloIds *hashset.Set
 }
 
@@ -33,7 +33,7 @@ func deleteAllData(t *testing.T) {
 func deleteHellos(t *testing.T) {
 	hellos, err := ListHellos(1000, 0, "")
 	require.NoError(t, err)
-	ids := lo.Map(hellos, func(item *meetupreplacementprojectv1.Hello, index int) string {
+	ids := lo.Map(hellos, func(item *taikaiv1.Hello, index int) string {
 		return lo.FromPtr(item.Id)
 	})
 	require.NoError(t, DeleteHellos(ids))
@@ -48,13 +48,13 @@ func loadHellos(t *testing.T) {
 	}
 }
 
-func CreateRandomNumHellos(t *testing.T) []*meetupreplacementprojectv1.Hello {
+func CreateRandomNumHellos(t *testing.T) []*taikaiv1.Hello {
 	return CreateHellos(t, gofakeit.Number(5, 10))
 }
 
-func CreateHellos(t *testing.T, num int) []*meetupreplacementprojectv1.Hello {
+func CreateHellos(t *testing.T, num int) []*taikaiv1.Hello {
 	var err error
-	hellos := []*meetupreplacementprojectv1.Hello{}
+	hellos := []*taikaiv1.Hello{}
 	for i := 0; i < num; i++ {
 		hello := createRandomHelloProto(t)
 		hellos = append(hellos, hello)
@@ -64,15 +64,15 @@ func CreateHellos(t *testing.T, num int) []*meetupreplacementprojectv1.Hello {
 	return hellos
 }
 
-func createRandomHelloProto(t *testing.T) *meetupreplacementprojectv1.Hello {
-	hello := &meetupreplacementprojectv1.Hello{}
+func createRandomHelloProto(t *testing.T) *taikaiv1.Hello {
+	hello := &taikaiv1.Hello{}
 	err := gofakeit.Struct(hello)
 	require.NoError(t, err)
 	return hello
 }
 
-func randomizeHellos(t *testing.T, hellos []*meetupreplacementprojectv1.Hello) []*meetupreplacementprojectv1.Hello {
-	randomized := []*meetupreplacementprojectv1.Hello{}
+func randomizeHellos(t *testing.T, hellos []*taikaiv1.Hello) []*taikaiv1.Hello {
+	randomized := []*taikaiv1.Hello{}
 	for _, hello := range hellos {
 		random := createRandomHelloProto(t)
 		random.Id = hello.Id

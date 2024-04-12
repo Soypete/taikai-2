@@ -1,5 +1,5 @@
 additionalProperties:
-  npmName: '@meetupreplacementproject/client-js'
+  npmName: '@taikai/client-js'
   npmVersion: 1.0.0
   supportsES6: true
   withNodeImports: true

@@ -9,11 +9,11 @@ import (
 	"github.com/catalystsquad/app-utils-go/errorutils"
 	"github.com/catalystsquad/app-utils-go/logging"
 	"github.com/catalystsquad/grpc-base-go/pkg"
-	meetupreplacementprojectv1 "github.com/forgeutah/meetup-replacement-project/protos/gen/go/meetupreplacementproject/v1"
-	"github.com/forgeutah/meetup-replacement-project/server/config"
-	"github.com/forgeutah/meetup-replacement-project/server/handlers"
-	"github.com/forgeutah/meetup-replacement-project/server/storage"
-	"github.com/forgeutah/meetup-replacement-project/server/storage/postgres"
+	taikaiv1 "github.com/forgeutah/taikai/protos/gen/go/taikai/v1"
+	"github.com/forgeutah/taikai/server/config"
+	"github.com/forgeutah/taikai/server/handlers"
+	"github.com/forgeutah/taikai/server/storage"
+	"github.com/forgeutah/taikai/server/storage/postgres"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/rs/cors"
 	"github.com/sirupsen/logrus"
@@ -25,7 +25,7 @@ import (
 // serveCmd represents the serve command
 var serveCmd = &cobra.Command{
 	Use:   "serve",
-	Short: "Start and serve the meetupreplacementproject api",
+	Short: "Start and serve the taikai api",
 	Run: func(cmd *cobra.Command, args []string) {
 		serve()
 	},
@@ -74,8 +74,8 @@ func initializeStorage() (func(), error) {
 }
 
 func registerServices() {
-	var apiServer meetupreplacementprojectv1.ApiServer = &handlers.ApiServer{}
-	meetupreplacementprojectv1.RegisterApiServer(Server.Server, apiServer)
+	var apiServer taikaiv1.ApiServer = &handlers.ApiServer{}
+	taikaiv1.RegisterApiServer(Server.Server, apiServer)
 }
 
 func runGateway() {
@@ -87,7 +87,7 @@ func runGateway() {
 		})
 	}))
 	opts := []grpc.DialOption{grpc.WithTransportCredentials(insecure.NewCredentials())}
-	err := meetupreplacementprojectv1.RegisterApiHandlerFromEndpoint(context.Background(), mux, grpcAddress, opts)
+	err := taikaiv1.RegisterApiHandlerFromEndpoint(context.Background(), mux, grpcAddress, opts)
 	errorutils.PanicOnErr(nil, "error registering grpc gateway api handler", err)
 	// forever loop to restart on crash
 	go func(httpAddress string, mux *runtime.ServeMux) {

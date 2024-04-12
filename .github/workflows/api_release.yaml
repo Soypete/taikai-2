@@ -27,7 +27,7 @@ jobs:
     - name: setup git config
       run: |
         git config --global user.name "Forge Utah Automation"
-        git config --global user.email "<engineering@catalystsquad.com>forge-utah-automation@forgeutah.tech"
+        git config --global user.email "forge-utah-automation@forgeutah.tech"
     - name: Get semver-tags
       run: |
         wget -c https://github.com/catalystsquad/semver-tags/releases/download/v0.3.3/semver-tags.tar.gz -O - | tar -xz

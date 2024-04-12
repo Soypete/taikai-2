@@ -20,7 +20,7 @@ var uri = env.GetEnvOrDefault("POSTGRES_URI", "postgresql://postgres:postgres@lo
 // migrateCmd represents the migrate command
 var migrateCmd = &cobra.Command{
 	Use:   "migrate",
-	Short: "Performs meetupreplacementproject database migrations",
+	Short: "Performs taikai database migrations",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		runMigrations()

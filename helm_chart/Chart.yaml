@@ -1,6 +1,6 @@
 apiVersion: v2
-name: meetupreplacementproject
-description: Helm chart for meetupreplacementproject
+name: taikai
+description: Helm chart for taikai
 type: application
 version: 0.0.0
 appVersion: "0.0.0"

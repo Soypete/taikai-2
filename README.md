@@ -1,4 +1,4 @@
-# meetupreplacementproject
+# taikai
 
 Generated via copier from github.com/catalystsquad/copier-go-cobra-app
 

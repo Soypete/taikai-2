@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/forgeutah/meetup-replacement-project/server/storage"
+	"github.com/forgeutah/taikai/server/storage"
 
 	"github.com/catalystsquad/app-utils-go/env"
 	"github.com/catalystsquad/grpc-base-go/pkg"

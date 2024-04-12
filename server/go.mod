@@ -1,4 +1,4 @@
-module github.com/forgeutah/meetup-replacement-project/server
+module github.com/forgeutah/taikai/server
 
 go 1.21
 
@@ -9,4 +9,4 @@ require (
 	github.com/spf13/viper v1.16.0
 )
 
-replace github.com/forgeutah/meetup-replacement-project/protos => ./../protos
+replace github.com/forgeutah/taikai/protos => ./../protos

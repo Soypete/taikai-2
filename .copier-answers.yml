@@ -7,7 +7,7 @@ create_settings: true
 create_workflows: true
 db_choice: Postgres
 enable_pull_request_test: true
-full_project_name: github.com/forgeutah/meetup-replacement-project
+full_project_name: github.com/forgeutah/taikai
 githost: github
 github_private_access: true
 grpc_health_probe: true
@@ -16,9 +16,9 @@ image_host: quay
 image_registry_domain: quay.io
 license_type: apache2
 organization: forgeutah
-release_git_user_email: <engineering@catalystsquad.com>forge-utah-automation@forgeutah.tech
+release_git_user_email: forge-utah-automation@forgeutah.tech
 release_git_user_name: Forge Utah Automation
 release_method: semver-tags
-repo_description: github.com/forgeutah/meetup-replacement-project
-short_project_name: meetupreplacementproject
+repo_description: github.com/forgeutah/taikai
+short_project_name: taikai
 use_protos: true

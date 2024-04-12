@@ -56,8 +56,8 @@ jobs:
       - working-directory: protos
         run: |
           buf generate
-          protoc-go-inject-tag -input="gen/go/meetupreplacementproject/v1/*.pb.gorm.go"
-          protoc-go-inject-tag -input="gen/go/meetupreplacementproject/v1/*.pb.go"
+          protoc-go-inject-tag -input="gen/go/taikai/v1/*.pb.gorm.go"
+          protoc-go-inject-tag -input="gen/go/taikai/v1/*.pb.go"
       - uses: stefanzweifel/git-auto-commit-action@v4
   buf-breaking:
     runs-on: ubuntu-latest

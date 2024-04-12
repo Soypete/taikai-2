@@ -25,9 +25,9 @@ build_protos() {
   install_proto_tools
   echo "Building proto generated things"
   PATH="$PATH:$(pwd)/node_modules/.bin"
-	cd protos; buf generate;protoc-go-inject-tag -input "gen/go/meetupreplacementproject/v1/*.*.*.go";protoc-go-inject-tag -input "gen/go/meetupreplacementproject/v1/*.*.go";go mod tidy; cd -
-	#mkdir -p protos/clients/js; cd protos/clients/js; openapi-generator-cli generate -g javascript -i ../../gen/docs/meetupreplacementproject/v1/api.swagger.json -c config.yaml; npm install; npm run build; cd -
-	mkdir -p protos/clients/ts; cd protos/clients/ts; openapi-generator-cli generate -g typescript-fetch -i ../../gen/docs/meetupreplacementproject/v1/api.swagger.json -c config.yaml; npm install; npm run build; cd -
+	cd protos; buf generate;protoc-go-inject-tag -input "gen/go/taikai/v1/*.*.*.go";protoc-go-inject-tag -input "gen/go/taikai/v1/*.*.go";go mod tidy; cd -
+	#mkdir -p protos/clients/js; cd protos/clients/js; openapi-generator-cli generate -g javascript -i ../../gen/docs/taikai/v1/api.swagger.json -c config.yaml; npm install; npm run build; cd -
+	mkdir -p protos/clients/ts; cd protos/clients/ts; openapi-generator-cli generate -g typescript-fetch -i ../../gen/docs/taikai/v1/api.swagger.json -c config.yaml; npm install; npm run build; cd -
 }
 
 run() {

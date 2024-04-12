@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: 'quay.io/forgeutah/meetupreplacementproject'
+  repository: 'quay.io/forgeutah/taikai'
   pullPolicy: IfNotPresent
 
 imagePullSecretCredentials: ""

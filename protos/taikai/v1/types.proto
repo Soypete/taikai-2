@@ -1,9 +1,9 @@
 syntax = "proto3";
-package meetupreplacementproject.v1;
+package taikai.v1;
 
 import "options/gorm.proto";
 import "google/protobuf/timestamp.proto";
-import "meetupreplacementproject/v1/enums.proto";
+import "taikai/v1/enums.proto";
 import "google/protobuf/struct.proto";
 
 option (gorm.file_opts) = {generate: true};

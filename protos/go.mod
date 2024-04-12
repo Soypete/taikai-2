@@ -1,4 +1,4 @@
-module github.com/forgeutah/meetup-replacement-project/protos
+module github.com/forgeutah/taikai/protos
 
 go 1.21
 

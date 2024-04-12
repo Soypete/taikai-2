@@ -1,6 +1,6 @@
 package main
 
-import "github.com/forgeutah/meetup-replacement-project/server/cmd"
+import "github.com/forgeutah/taikai/server/cmd"
 
 func main() {
 	cmd.Execute()
