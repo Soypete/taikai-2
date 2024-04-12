@@ -1,0 +1,24 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 4e70df4
+_src_path: https://github.com/catalystcommunity/copier-go-gorm-api
+codeowners_group: engineers
+create_codeowners: true
+create_settings: true
+create_workflows: true
+db_choice: Postgres
+enable_pull_request_test: true
+full_project_name: github.com/forgeutah/meetup-replacement-project
+githost: github
+github_private_access: true
+grpc_health_probe: true
+helm_repo: forgeutah/charts
+image_host: quay
+image_registry_domain: quay.io
+license_type: apache2
+organization: forgeutah
+release_git_user_email: <engineering@catalystsquad.com>forge-utah-automation@forgeutah.tech
+release_git_user_name: Forge Utah Automation
+release_method: semver-tags
+repo_description: github.com/forgeutah/meetup-replacement-project
+short_project_name: meetupreplacementproject
+use_protos: true
